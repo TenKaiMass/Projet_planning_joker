@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link th:rel="stylesheet" th:href="@{/css/w3.css}"/>
+    <link th:rel="stylesheet" th:href="@{/css/custom.css}"/>
+    <title>Sakila - Utilisateurs</title>
+</head>
+
+<body>
+
+<h1 class="center">Liste des utilisateurs</h1>
+<br>
+<a class="w3-button w3-sand w3-round-xlarge" th:href="@{/}">Retour</a>
+<br>
+
+<tr>Nombre de rôles: <td th:text="${#lists.size(users)}"></td></tr>
+<div class="center">
+    <table  class="w3-table-all">
+        <thead>
+        <tr class="w3-light-grey w3-hover-gray">
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Label</th>
+            <th>Date de creation</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="w3-hover-sand" th:each="u : ${users}" >
+            <td th:text="${u.id}"></td>
+            <td th:text="${u.name}"></td>
+            <td th:text="${u.label}"></td>
+            <td th:text="${u.creationDate}"></td>
+
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
