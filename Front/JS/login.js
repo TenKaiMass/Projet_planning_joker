@@ -21,3 +21,4 @@ function login_ok() {
   document.body.appendChild(link);
   link.click();
 }
+
