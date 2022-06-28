@@ -1,0 +1,37 @@
+.conteneur{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    flex-wrap: wrap;
+}
+.carte{
+
+    border-radius: 15px;
+    color: black;
+    width: 150px;
+    height: 190px;
+    display: flex;
+    margin-bottom: 100px;
+    transition: all .8s;
+    
+}
+.carte:hover{
+    background: bisque;
+}
+.border{
+    height: 190px;
+    width: 150px;
+    border-radius: 15px;
+    border-color: black;
+    border: 8px solid black;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    box-shadow: 0 70px 62px -60px black;
+}
+
+.border:hover{
+    border: 12px solid black;
+
+}
