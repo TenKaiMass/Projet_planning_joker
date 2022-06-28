@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr"
+      xmlns:th="http://thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="../CSS/style.css" />
-    <link rel="stylesheet" href="../CSS/w3.css"/>
+    <link th:rel="stylesheet" th:href= "@{/CSS/style.css}">
+    <link th:rel="stylesheet" th:href="@{/CSS/w3.css}">
   </head>
   <body>
     <div class="wrapper">
@@ -25,9 +26,10 @@
             <i class="icon fas fa-lock"></i>
             <i class="error error-icon fas fa-exclamation-circle"></i>
           </div>
-          <a  class="my_btn w3-button w3-blue w3-border-blue  w3-round-xxlarge w3-border w3-hover-blue" onclick="login_ok()">Connextion</a>
+          <a  class="my_btn w3-button w3-blue w3-border-blue  w3-round-xxlarge w3-border w3-hover-blue" onclick="login_ok()">Connexion</a>
+        </div>
       </form>
     </div>
   </body>
-  <script src="../JS/login.js"></script>
+  <script th:src="@{/js/login.js}"></script>
 </html>

@@ -11,13 +11,10 @@ import java.time.format.DateTimeFormatter;
 
 @Controller
     @RequestMapping("/")
-public class WelcomController {
+public class WelcomeController {
     @GetMapping
-    public String index(ModelMap model){
-        String msg= "Bienvenue sur Poker PLaning. \n"
-                + "Nous sommes le" + LocalDateTime.now().format((DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy")));
-        model.addAttribute("message", msg);
-        return "index";
+    public String Login(ModelMap model){
+        return "login";
     }
 
 }
