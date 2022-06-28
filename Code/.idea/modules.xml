@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Code.iml" filepath="$PROJECT_DIR$/.idea/Code.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring.boot.planning/spring.boot.planning.iml" filepath="$PROJECT_DIR$/spring.boot.planning/spring.boot.planning.iml" />
-      <module fileurl="file://$PROJECT_DIR$/spring.boot.poker.mvc/spring.boot.poker.mvc.iml" filepath="$PROJECT_DIR$/spring.boot.poker.mvc/spring.boot.poker.mvc.iml" />
     </modules>
   </component>
 </project>

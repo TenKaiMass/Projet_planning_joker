@@ -9,7 +9,8 @@ import java.util.List;
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idroles;
+    @Column(name = "role_id")
+    private Integer id;
     @Column(name = "role")
     private String role;
     @Column(name = "label")
@@ -19,18 +20,18 @@ public class Role {
 //    List<User> users;
 
 
-    public Role(Integer idroles, String role, String label) {
-        this.idroles = idroles;
+    public Role(Integer id, String role, String label) {
+        this.id = id;
         this.role = role;
         this.label = label;
     }
 
-    public Integer getIdroles() {
-        return idroles;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdroles(Integer idroles) {
-        this.idroles = idroles;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getRole() {
@@ -52,7 +53,7 @@ public class Role {
     @Override
     public String toString() {
         return "Role{" +
-                "idroles=" + idroles +
+                "id=" + id +
                 ", role='" + role + '\'' +
                 ", label='" + label + '\'' +
                 '}';
