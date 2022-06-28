@@ -24,12 +24,12 @@ public class RoleServiceImpl implements RoleService{
 
     @Override
     public Role create(Role role) {
-        return null;
+        return repository.save(role);
     }
 
     @Override
     public Role update(Role role) {
-        return null;
+        return repository.save(role);
     }
 
     @Override
@@ -39,6 +39,7 @@ public class RoleServiceImpl implements RoleService{
 
     @Override
     public Boolean delete(Integer id) {
-        return null;
+        repository.deleteById(id);
+        return (read(id) == null);
     }
 }

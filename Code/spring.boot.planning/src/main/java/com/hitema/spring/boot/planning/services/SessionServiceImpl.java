@@ -24,20 +24,21 @@ public class SessionServiceImpl implements SessionService{
 
     @Override
     public Session create(Session session) {
-        return null;
+        return repository.save(session);
     }
 
     @Override
     public Session update(Session session) {
-        return null;
+        return repository.save(session);
     }
 
     @Override
-    public Session read(Integer id) {return null;
+    public Session read(Integer id) {return repository.findById(id).orElse(null);
     }
 
     @Override
     public Boolean delete(Integer id) {
-        return null;
+        repository.deleteById(id);
+        return (read(id) == null);
     }
 }

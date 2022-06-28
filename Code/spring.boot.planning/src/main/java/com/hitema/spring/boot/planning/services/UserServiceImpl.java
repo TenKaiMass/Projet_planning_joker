@@ -24,20 +24,20 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User create(User user) {
-        return null;
-    }
+        return repository.save(user);    }
 
     @Override
     public User update(User user) {
-        return null;
+        return repository.save(user);
     }
 
     @Override
-    public User read(Integer id) {return null;
+    public User read(Integer id) {return repository.findById(id).orElse(null);
     }
 
     @Override
     public Boolean delete(Integer id) {
-        return null;
+        repository.deleteById(id);
+        return (read(id) == null);
     }
 }

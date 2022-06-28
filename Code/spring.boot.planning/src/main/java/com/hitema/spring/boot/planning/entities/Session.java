@@ -21,6 +21,9 @@ public class Session {
     @Column(name="date_creation")
     private LocalDateTime creationDate;
 
+    @Column(name="resultat_vote")
+    private Integer ResultatVote;
+
     public Session() {
 
     }
@@ -53,15 +56,24 @@ public class Session {
         return creationDate;
     }
 
+    public Integer getResultatVote() {
+        return ResultatVote;
+    }
+
+    public void setResultatVote(Integer resultatVote) {
+        ResultatVote = resultatVote;
+    }
+
     public void setCreationDate(LocalDateTime creationDate) {
         this.creationDate = creationDate;
     }
 
-    public Session(Integer id, String nom, String unites, LocalDateTime creationDate) {
+    public Session(Integer id, String nom, String unites, LocalDateTime creationDate, Integer resultatVote) {
         this.id = id;
         this.nom = nom;
         this.unites = unites;
         this.creationDate = creationDate;
+        ResultatVote = resultatVote;
     }
 
     @Override
@@ -71,6 +83,7 @@ public class Session {
                 ", nom='" + nom + '\'' +
                 ", unites='" + unites + '\'' +
                 ", creationDate=" + creationDate +
+                ", ResultatVote=" + ResultatVote +
                 '}';
     }
 }
