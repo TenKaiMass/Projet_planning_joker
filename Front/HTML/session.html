@@ -6,15 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../CSS/w3.css"/>
     <link rel="stylesheet" href="../CSS/custom.css"/>
-    </head>
+    <link rel="stylesheet" href="../CSS/card.css"/>
+
+</head>
 </head>
 <body>
-<p>
-    
-</p>
+    <div class="conteneur">
+        <div id="carte_1" class="carte carte_1">
+            <div class="border">
+                <a href=""></a>
+                <h2 id="card1">1</h2>
+            </div>
+        </div>
+        <div class="carte carte_2">
+            <div class="border">
+                <h2 id="card2">3</h2>
+            </div>
+        </div>
+        <div class="carte carte_3">
+            <div class="border">
+                <h2 id="card3">5</h2>
+            </div>
+        </div>
+        <div class="carte carte_4">
+            <div class="border">
+                <h2 id="card4">10</h2>
+            </div>
+        </div>
+        <div class="carte carte_5">
+            <div class="border">
+                <h2 id="card5">15</h2>
+            </div>
+        </div>
+    </div>
+   
 </body>
 <script>
-    const pass = localStorage.getItem('key_type')
-    console.log(pass)
+    function checkTypeUser(){
+        const pass = localStorage.getItem('key_type')
+    }
+    const card1 = document.getElementById('carte_1');
+    const num = card1.querySelector('#card1').textContent;
+    card1.addEventListener('click', () => {
+        console.log(num)
+    });
+        
+
+
 </script>
 </html>
