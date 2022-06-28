@@ -13,7 +13,8 @@
     <button id="btn_vote" class="w3-button w3-blue">Démarrer le vote</button>
     <button id="btn_ajout" class="w3-button w3-blue">ajouter membre</button>
     <button id="btn_suppression" class="w3-button w3-blue">supprimer membre</button>
-    <dialog id="ajout_membre" class="w3-round-xlarge w3-border w3-border-white"></dialogid>>
+    
+    <dialog id="ajout_membre" class="w3-round-xlarge w3-border w3-border-white">
         <div class="w3-container center">
             <table class="w3-table-all">
               <thead>
@@ -42,9 +43,10 @@
             <menu>
                 <button id="close_dialog" class="w3-hover-red w3-round-large w3-border w3-hover-border-red">Annuler</button>
             </menu>
+        </div>
     </dialog>
     
-    <dialog id="supp_membre" class="w3-round-xlarge w3-border w3-border-white"></dialogid>>
+     <dialog id="supp_membre" class="w3-round-xlarge w3-border w3-border-white">
         <div class="w3-container center">
             <table class="w3-table-all">
               <thead>
@@ -63,54 +65,73 @@
                       <td th:text="cty.Nom"></td>
                       <td th:text="cty.Poste"></td>
                       <td th:text="cty.Role"></td>
-                      <td><input id="ajout" class="w3-hover-green w3-border w3-border-black w3-hover-border-green w3-btn w3-round-xxlarge" type="button"
-                          value="Ajouter"></td>
-                      <!-- <td th:input="class="w3-hover-green w3-border w3-border-black w3-hover-border-green w3-btn w3-round-xxlarge" type="button"
-                      value="Suupprimer"></td> -->
+                      <td><input id="supp" class="w3-hover-red w3-border w3-border-black w3-hover-border-red w3-btn w3-round-xxlarge" type="button"
+                          value="Supprimer"></td>
+                      <!-- <td th:input="class="w3-hover-green w3-border w3-border-black w3-hover-border-green w3-btn w3-round-xxlarge" type="button" 
+                      value="Suupprimer"></td>  -->
                   </tr>
               </tbody>
             </table>
             <menu>
-                <button id="close_dialog" class="w3-hover-red w3-round-large w3-border w3-hover-border-red">Annuler</button>
+                <button id="close_dialog_supp" class="w3-hover-red w3-round-large w3-border w3-hover-border-red">Annuler</button>
             </menu>
-    </dialog>
-    
-
-
-    </div>
-
+    </dialog> 
   </body>
   <script>
         //partie ajout membre
         const btnOpenAjout = document.getElementById('btn_ajout');
         const favDialogAjout = document.querySelector('#ajout_membre');
         const btnAjout = document.querySelector('#ajout');
-        const btnCloseAjout = favDialog.querySelector('#close_dialog');
+        const btnCloseAjout = favDialogAjout.querySelector('#close_dialog');
         btnOpenAjout.addEventListener('click', () => {
-        if (typeof favDialog.showModal === "function") {
-            favDialog.showModal()
+        if (typeof favDialogAjout.showModal === "function") {
+            favDialogAjout.showModal()
         } else {
             outputBox.value = "Sorry, the <dialog> API is not supported by this browser.";
         }
         });
         btnCloseAjout.addEventListener('click', () => {
-            favDialog.close()
+            favDialogAjout.close()
         });
 
         //partie suppression membre
-        const btnOpenSupp = document.getElementById('btn_ajout');
-        const favDialogSupp = document.querySelector('#ajout_membre');
-        const btnSupp = document.querySelector('#ajout');
-        const btnCloseSupp = favDialog.querySelector('#close_dialog');
+        const btnOpenSupp = document.getElementById('btn_suppression');
+        const favDialogSupp = document.querySelector('#supp_membre');
+        const btnSupp = document.querySelector('#supp');
+        const btnCloseSupp = favDialogSupp.querySelector('#close_dialog_supp');
         btnOpenSupp.addEventListener('click', () => {
-        if (typeof favDialog.showModal === "function") {
+        if (typeof favDialogSupp.showModal === "function") {
             favDialogSupp.showModal()
         } else {
             outputBox.value = "Sorry, the <dialog> API is not supported by this browser.";
         }
         });
-        btnClose.addEventListener('click', () => {
-            favDialog.close()
+        btnCloseSupp.addEventListener('click', () => {
+            favDialogSupp.close()
         });
+
+        const btnVote =document.getElementById('btn_vote') 
+
+        btnVote.addEventListener('click',()=> {
+            typeVote()
+        });
+        function typeVote(){
+          const pass = localStorage.getItem('key_type')
+          var url =''
+          console.log(pass)
+          if (pass == 'Jours'){
+            url = "./session_point.html" 
+          }else if(pass == 'Points'){
+            url ="./session_point.html" 
+          }
+          else{
+            alert("erreur pas de type reglementaire")
+          }
+          const link = document.createElement("a");
+          link.href = url;
+          link.target = "_blank";
+          document.body.appendChild(link);
+          link.click();
+        }
   </script>
 </html>
