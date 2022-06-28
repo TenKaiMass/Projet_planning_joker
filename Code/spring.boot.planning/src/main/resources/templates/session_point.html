@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Session</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../CSS/w3.css"/>
+    <link rel="stylesheet" href="../CSS/custom.css"/>
+    <link rel="stylesheet" href="../CSS/card.css"/>
+
+</head>
+</head>
+<body>
+    <div class="conteneur">
+        <div id="carte_1" class="carte carte_1">
+            <div class="border">
+                <a href=""></a>
+                <h2 id="card1">1</h2>
+            </div>
+        </div>
+        <div class="carte carte_2">
+            <div class="border">
+                <h2 id="card2">3</h2>
+            </div>
+        </div>
+        <div class="carte carte_3">
+            <div class="border">
+                <h2 id="card3">5</h2>
+            </div>
+        </div>
+        <div class="carte carte_4">
+            <div class="border">
+                <h2 id="card4">10</h2>
+            </div>
+        </div>
+        <div class="carte carte_5">
+            <div class="border">
+                <h2 id="card5">15</h2>
+            </div>
+        </div>
+    </div>
+   
+</body>
+<script>
+    let valueChoice
+    const card1 = document.getElementById('carte_1');
+    const num = card1.querySelector('#card1').textContent;
+    card1.addEventListener('click', () => {
+        console.log(num)
+        valueChoice = parseInt(num)
+    });    
+    
+    const card2 = document.getElementById('carte_2');
+    const num2 = card2.querySelector('#card2').textContent;
+    card2.addEventListener('click', () => {
+        console.log(num2)
+        valueChoice = parseInt(num2)
+    });    
+    
+    const card3 = document.getElementById('carte_3');
+    const num3 = card3.querySelector('#card3').textContent;
+    card3.addEventListener('click', () => {
+        console.log(num3)
+        valueChoice = parseInt(num3)
+
+    });    const card4 = document.getElementById('carte_4');
+    const num4 = card4.querySelector('#card4').textContent;
+    card4.addEventListener('click', () => {
+        console.log(num4)
+        valueChoice = parseInt(num4)
+
+    });    const card5 = document.getElementById('carte_5');
+    const num5 = card5.querySelector('#card5').textContent;
+    card5.addEventListener('click', () => {
+        console.log(num5)
+        valueChoice = parseInt(num5)
+    });
+
+        
+
+
+</script>
+</html>
