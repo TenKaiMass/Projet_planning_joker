@@ -22,6 +22,6 @@ public class Application implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		log.info("Server Start at : {}", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-yyyy HH:mm:ss")));
-		log.info("Server main page  : http://localhost:8082//planning");
+		log.info("Server main page  : http://localhost:8082/login");
 	}
 }

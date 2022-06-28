@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="../CSS/w3.css" />
-    <link rel="stylesheet" href="../CSS/custom.css" />
-    <title>Promotion</title>
+    <link rel="stylesheet" href="../static/CSS/w3.css" />
+    <link rel="stylesheet" href="../static/CSS/custom.css" />
+    <title>suppression</title>
   </head>
     <p class="errMsg" id="sysMsg"></p>
 
@@ -14,12 +14,12 @@
     <div class="w3-container center">
       <table class="w3-table-all">
         <thead>
-          <tr class="w3-white">
+          <tr class="w3-green">
             <th>ID</th>
             <th>Nom</th>
             <th>Poste</th>
             <th>Role</th>
-            <th>Promouvoir</th>
+            <th>Suppression</th>
           </tr>
         </thead>
         <tbody>
@@ -29,10 +29,8 @@
                 <td th:text="cty.Nom"></td>
                 <td th:text="cty.Poste"></td>
                 <td th:text="cty.Role"></td>
-                <td><input class="w3-hover-green w3-border w3-border-black w3-hover-border-green w3-btn w3-round-xxlarge" type="button"
-                    value="Promouvoir"></td>
-                <!-- <td th:input="class="w3-hover-green w3-border w3-border-black w3-hover-border-green w3-btn w3-round-xxlarge" type="button"
-                value="Promouvoir"></td> -->
+                <td><input class="w3-hover-red w3-border w3-border-black w3-hover-border-red w3-btn w3-round-xxlarge" type="button"
+                    value="Supprimer"></td>
             </tr>
         </tbody>
       </table>
