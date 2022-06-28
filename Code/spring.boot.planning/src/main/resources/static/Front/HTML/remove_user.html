@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../CSS/w3.css" />
+    <link rel="stylesheet" href="../CSS/custom.css" />
+    <title>suppression</title>
+  </head>
+    <p class="errMsg" id="sysMsg"></p>
+
+    <h1 class="center">Liste des membres</h1>
+
+    <div class="w3-container center">
+      <table class="w3-table-all">
+        <thead>
+          <tr class="w3-green">
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Poste</th>
+            <th>Role</th>
+            <th>Suppression</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr class="w3-hover-blue">
+            <!-- th:each="mem : countries" > -->
+                <td th:text="cty.id"></td>
+                <td th:text="cty.Nom"></td>
+                <td th:text="cty.Poste"></td>
+                <td th:text="cty.Role"></td>
+                <td><input class="w3-hover-red w3-border w3-border-black w3-hover-border-red w3-btn w3-round-xxlarge" type="button"
+                    value="Supprimer"></td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+    
+  </body>
+</html>
