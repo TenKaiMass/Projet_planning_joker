@@ -9,26 +9,26 @@
   </head>
   <body>
     <div class="container">
-      <form action="#">
+      <form action="#" th:action="@{/admin/add}" th:objects="${user}" method="post">
         <div class="form-row">
           <div class="input-data">
-            <input type="text" required />
+            <input type="text" required th:field="*{user.nom}" />
             <div class="underline"></div>
             <label >Nom</label>
           </div>
           <div class="input-data">
-            <input type="text" required />
+            <input type="text" required th:field="*{user.Poste}" />
             <div class="underline"></div>
-            <label >Role</label>
+            <label>Poste</label>
           </div>
         </div>
-        <div class="form-row">
+      <!--  <div class="form-row">
           <div class="input-data">
             <input type="text" required />
             <div class="underline"></div>
             <label>Email</label>
           </div>
-        </div>
+        </div>-->
         <div class="form-row">
           <div class="input-data textarea">
             <br />
