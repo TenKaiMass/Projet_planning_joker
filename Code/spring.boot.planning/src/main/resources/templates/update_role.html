@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr"  xmlns:th="http://thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="../static/CSS/w3.css" />
-    <link rel="stylesheet" href="../static/CSS/custom.css" />
+    <link th:rel="stylesheet" th:href="@{/CSS/w3.css}" />
+    <link th:rel="stylesheet" th:href="@{/CSS/custom.css}" />
     <title>Promotion</title>
+      <br>
+      <a class="w3-button w3-blue w3-round-xlarge" th:href="@{/admin}">Retour</a>
+      <br>
   </head>
     <p class="errMsg" id="sysMsg"></p>
 
@@ -18,26 +21,31 @@
             <th>ID</th>
             <th>Nom</th>
             <th>Poste</th>
-            <th>Role</th>
             <th>Promouvoir</th>
           </tr>
         </thead>
         <tbody>
-            <tr class="w3-hover-blue">
-            <!-- th:each="mem : countries" > -->
-                <td th:text="cty.id"></td>
-                <td th:text="cty.Nom"></td>
-                <td th:text="cty.Poste"></td>
-                <td th:text="cty.Role"></td>
-                <td><input class="w3-hover-green w3-border w3-border-black w3-hover-border-green w3-btn w3-round-xxlarge" type="button"
-                    value="Promouvoir"></td>
+            <tr id="array" class="w3-hover-blue" th:each="user : ${users}">
+                <td th:text="${user.id}"></td>
+                <td th:text="${user.nom}"></td>
+                <td th:text="${user.Poste}"></td>
+<!--                <td th:text="cty.Role"></td>-->
+              <td><a href="#" th:onclick="affId(${user.id}})">Promouvoir</a></td>
+
                 <!-- <td th:input="class="w3-hover-green w3-border w3-border-black w3-hover-border-green w3-btn w3-round-xxlarge" type="button"
                 value="Promouvoir"></td> -->
             </tr>
         </tbody>
       </table>
     </div>
-
-    
   </body>
+  <script>
+
+    function affId(key){
+      console.log(key)
+      // alert(key)
+      console.log("ca click")
+
+    }
+  </script>
 </html>

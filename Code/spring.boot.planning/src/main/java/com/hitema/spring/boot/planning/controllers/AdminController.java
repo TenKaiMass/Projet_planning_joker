@@ -50,4 +50,18 @@ public class AdminController {
         return "redirect:/admin/remove";
     }
 
+    @GetMapping("/update")
+    public String updateUser(ModelMap model) {
+        log.info("readAll user called ...");
+        model.addAttribute("users", service.readAll());
+        return "update_role";
+    }
+/*    @PostMapping("/update")
+    public String updating(@ModelAttribute("users") User user){
+        log.info(user.getId().toString());
+        return "update_role";
+    }*/
+    /*@GetMapping("/prom")
+    public String PromUser(ModelMap model) { return "remove_user";}*/
+
 }
