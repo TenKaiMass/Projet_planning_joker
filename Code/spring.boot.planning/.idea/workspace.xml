@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5cb861b5-aae6-4f37-a0c0-d9c7ca020227" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hitema/spring/boot/planning/controllers/SessionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hitema/spring/boot/planning/controllers/SessionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hitema/spring/boot/planning/controllers/WelcomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hitema/spring/boot/planning/controllers/WelcomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hitema/spring/boot/planning/entities/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hitema/spring/boot/planning/entities/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hitema/spring/boot/planning/entities/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hitema/spring/boot/planning/entities/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hitema/spring/boot/planning/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hitema/spring/boot/planning/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index_admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index_responsable.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index_responsable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/session_responsable.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/session_responsable.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2BFhp0oSFdlJmKozGxv2Rj6g7R4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Benoit/Documents/GitHub/Projet_planning_poker/Code/spring.boot.planning&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;e94c1d6278ce80a9516ef826bd9e01ff&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RunManager" selected="Spring Boot.Application">
+    <configuration name="RoleServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring.boot.planning" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hitema.spring.boot.planning.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hitema.spring.boot.planning.services" />
+      <option name="MAIN_CLASS_NAME" value="com.hitema.spring.boot.planning.services.RoleServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SessionServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring.boot.planning" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hitema.spring.boot.planning.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hitema.spring.boot.planning.services" />
+      <option name="MAIN_CLASS_NAME" value="com.hitema.spring.boot.planning.services.SessionServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SessionServiceImplTest.Create" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring.boot.planning" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hitema.spring.boot.planning.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hitema.spring.boot.planning.services" />
+      <option name="MAIN_CLASS_NAME" value="com.hitema.spring.boot.planning.services.SessionServiceImplTest" />
+      <option name="METHOD_NAME" value="Create" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring.boot.planning" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hitema.spring.boot.planning.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hitema.spring.boot.planning.services" />
+      <option name="MAIN_CLASS_NAME" value="com.hitema.spring.boot.planning.services.UserServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="session_responsable.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/spring.boot.planning/templates/session_responsable.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="spring.boot.planning" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.hitema.spring.boot.planning.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.SessionServiceImplTest" />
+        <item itemvalue="JUnit.UserServiceImplTest" />
+        <item itemvalue="JUnit.SessionServiceImplTest.Create" />
+        <item itemvalue="JUnit.RoleServiceImplTest" />
+        <item itemvalue="JavaScript Debug.session_responsable.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5cb861b5-aae6-4f37-a0c0-d9c7ca020227" name="Changes" comment="" />
+      <created>1656507920057</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1656507920057</updated>
+      <workItem from="1656507921371" duration="178000" />
+      <workItem from="1656508120967" duration="7370000" />
+      <workItem from="1656522546359" duration="1853000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
