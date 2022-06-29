@@ -40,6 +40,7 @@ public class AdminController {
         service.create(user);
         return "index_admin";
     }
+<<<<<<< HEAD
 
     @GetMapping("/deleteUser/{id}")
     public String deleteUser(@PathVariable("id") Integer id, Model model) {
@@ -49,19 +50,20 @@ public class AdminController {
         log.info("user deleted");
         return "redirect:/admin/remove";
     }
-
+=======
     @GetMapping("/update")
     public String updateUser(ModelMap model) {
         log.info("readAll user called ...");
-        model.addAttribute("users", service.readAllMember());
+        model.addAttribute("users", service.readAll());
         return "update_role";
     }
+/*    @PostMapping("/update")
+    public String updating(@ModelAttribute("users") User user){
+        log.info(user.getId().toString());
+        return "update_role";
+    }*/
+    /*@GetMapping("/prom")
+    public String PromUser(ModelMap model) { return "remove_user";}*/
+>>>>>>> 316f6ec (avancement creation Update role)
 
-    @GetMapping("/updateMyUser/{id}")
-    public String updateMyUser(@PathVariable("id") Integer id, Model model){
-        User u = service.read(id);
-        u.setRole("responsable");
-        service.update(u);
-        return "redirect:/admin/update";
-    }
 }
