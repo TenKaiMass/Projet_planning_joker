@@ -2,6 +2,7 @@ package com.hitema.spring.boot.planning.controllers;
 
 
 import com.hitema.spring.boot.planning.entities.Session;
+import com.hitema.spring.boot.planning.entities.User;
 import com.hitema.spring.boot.planning.services.SessionService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -34,10 +35,14 @@ public class SessionController {
         return service.read(id);
     }
 
-    @GetMapping("/session_responsable")
-    public String SessionRespo(ModelMap model){
+    @PostMapping("/sess")
+    public String SessionStart(@ModelAttribute("session") Session session) {
+        log.info(session.toString());
+        service.create(session);
         return "session_responsable";
     }
+
+
 
 
 
