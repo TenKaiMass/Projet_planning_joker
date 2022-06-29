@@ -28,8 +28,11 @@ public class WelcomeController {
     }
     @GetMapping("/session")
     public String Session(ModelMap model){
-        return "session";
+        return "session_point";
     }
+
+
+
 
     @GetMapping("/membre")
     public String Membre(ModelMap model){
