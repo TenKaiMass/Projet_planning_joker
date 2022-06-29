@@ -5,7 +5,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-    @Table(name="roles")
+    @Table(name="role")
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,9 +15,6 @@ public class Role {
     private String role;
     @Column(name = "label")
     private String label;
-
-    @ManyToMany(mappedBy="roles")
-    private List<User> users;
 
 
     public Role(Integer id, String role, String label) {

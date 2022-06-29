@@ -20,11 +20,16 @@ public class User {
     @Column(name = "post")
     private String Poste;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @Column(name = "role")
+    private String Role;
+
+
+
+   /* @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name="user_roles",
             joinColumns={@JoinColumn(name="users_user_id")},
             inverseJoinColumns={@JoinColumn(name="roles_idroles")})
-    private List<Role> roles;
+    private List<Role> roles;*/
 
     public User() {
 
@@ -45,6 +50,13 @@ public class User {
 
     public void setNom(String nom) {
         this.nom = nom;
+    }
+    public String getRole() {
+        return Role;
+    }
+
+    public void setRole(String role) {
+        this.Role = role;
     }
 
     public String getPoste() {
@@ -67,6 +79,7 @@ public class User {
                 "id=" + id +
                 ", nom='" + nom + '\'' +
                 ", Poste='" + Poste + '\'' +
+                ", Role='" + Role +
                 '}';
     }
 }

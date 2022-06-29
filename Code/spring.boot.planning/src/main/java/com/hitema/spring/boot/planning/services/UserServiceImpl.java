@@ -36,6 +36,10 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
+    public List<User> readAllMember(){
+        return repository.findAllMemberByRole();
+    }
+    @Override
     public Boolean delete(Integer id) {
         repository.deleteById(id);
         return (read(id) == null);

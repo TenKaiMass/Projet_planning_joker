@@ -9,6 +9,9 @@ public interface UserService {
     User create(User user);
     User update(User user);
     User read(Integer id);
+
+    List<User> readAllMember();
+
     Boolean delete(Integer id);
 
 }
