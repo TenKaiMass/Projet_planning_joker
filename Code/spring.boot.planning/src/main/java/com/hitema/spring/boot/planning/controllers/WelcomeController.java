@@ -31,9 +31,6 @@ public class WelcomeController {
         return "session_point";
     }
 
-
-
-
     @GetMapping("/membre")
     public String Membre(ModelMap model){
         return "index_membre";
@@ -41,6 +38,11 @@ public class WelcomeController {
     @GetMapping("/responsable")
     public String Responsable(ModelMap model){
         return "index_responsable";
+    }
+
+    @GetMapping("/session_responsable")
+    public String SessionRespo(ModelMap model){
+        return "session_responsable";
     }
 
 
