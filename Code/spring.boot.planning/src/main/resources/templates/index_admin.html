@@ -10,11 +10,13 @@
     </head>
 </head>
 <body>
-<h1 class="center">Bienvenue sur le Planning Poker</h1>
+<h1 class="center">Bienvenue sur le Planning Poker </h1>
 <div class="w3-container center">
-    <a  class="w3-button w3-blue" href="add_user.html">ajoutez un membre</a>
-    <a  class="w3-button w3-blue" href="remove_user.html">supprimer un membre</a>
-    <a  class="w3-button w3-blue" href="update_role.html">Promouvoir un membre</a>
+    <a  class="w3-button w3-blue" th:href=@{/admin/add}>ajoutez un membre</a>
+    <a  class="w3-button w3-blue" th:href=@{/admin/remove}>supprimer un membre</a>
+    <a  class="w3-button w3-blue" th:href="update_role.html">Promouvoir un membre</a>
+
+
 </div>
 </body>
 </html>
