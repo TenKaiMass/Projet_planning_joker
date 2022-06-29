@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `pokerbd`.`users` (
   `user_id` INT NOT NULL AUTO_INCREMENT,
   `nom` VARCHAR(45) NOT NULL,
   `post` VARCHAR(45) ,
-  `roles` VARCHAR(45),
+  `role` VARCHAR(45),
   PRIMARY KEY (`user_id`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 3
