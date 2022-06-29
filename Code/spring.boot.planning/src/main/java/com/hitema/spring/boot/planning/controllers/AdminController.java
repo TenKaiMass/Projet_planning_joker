@@ -5,11 +5,9 @@ import com.hitema.spring.boot.planning.services.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/admin")
@@ -37,13 +35,19 @@ public class AdminController {
         return "remove_user";
     }
     @PostMapping("/add")
-    public String retrieveUser(@ModelAttribute("user") User user){
+    public String retrieveUser(@ModelAttribute("user") User user) {
         log.info(user.toString());
         service.create(user);
         return "index_admin";
-
     }
-    /*@GetMapping("/prom")
-    public String PromUser(ModelMap model) { return "remove_user";}*/
+
+    @GetMapping("/deleteUser/{id}")
+    public String deleteUser(@PathVariable("id") Integer id, Model model) {
+        log.info("deleting user...");
+        log.info(String.valueOf(id));
+        service.delete(id);
+        log.info("user deleted");
+        return "redirect:/admin/remove";
+    }
 
 }
