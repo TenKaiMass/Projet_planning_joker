@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.TestInstance.Lifecycle.PER_CLASS;
@@ -21,6 +22,9 @@ class SessionServiceImplTest {
     private static final Logger log = LoggerFactory.getLogger(SessionServiceImplTest.class);
     @Autowired
     private SessionService service;
+
+    @Autowired
+    private UserService serviceUse;
 
     private Session session;
 
@@ -45,10 +49,16 @@ class SessionServiceImplTest {
         session.setNom("Nom TEST");
         session.setUnites("Unites TEST");
         session.setCreationDate(LocalDateTime.now());
-        service.create(session);
+        var user = new User();
+        user.setNom("toto");
+        user.setPoste("DevOps");
+        user = serviceUse.create(user);
+        session.setUsers(List.of(user));
+        session = service.create(session);
         assertNotNull(session.getId(),"ERROR User NOT CREATED !!!!");
         log.info("User Created : {}",session);
         log.info("<<<END   CreateNewSession >>>");
+
     }
 
     @Test
