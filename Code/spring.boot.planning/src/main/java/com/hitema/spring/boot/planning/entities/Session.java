@@ -21,8 +21,30 @@ public class Session {
     @Column(name="date_creation")
     private LocalDateTime creationDate;
 
-    @Column(name="resultat_vote")
+
     private Integer ResultatVote;
+    @ManyToMany(mappedBy = "sessions")
+    private List<User> users;
+
+    @Override
+    public String toString() {
+        return "Session{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", unites='" + unites + '\'' +
+                ", creationDate=" + creationDate +
+                ", ResultatVote=" + ResultatVote +
+                ", users=" + users +
+                '}';
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
+    }
+
+    public List<User> getUsers() {
+        return users;
+    }
 
     public Session() {
 
@@ -56,6 +78,7 @@ public class Session {
         return creationDate;
     }
 
+    @Column(name="resultat_vote")
     public Integer getResultatVote() {
         return ResultatVote;
     }
@@ -76,15 +99,5 @@ public class Session {
         ResultatVote = resultatVote;
     }
 
-    @Override
-    public String toString() {
-        return "Session{" +
-                "id=" + id +
-                ", nom='" + nom + '\'' +
-                ", unites='" + unites + '\'' +
-                ", creationDate=" + creationDate +
-                ", ResultatVote=" + ResultatVote +
-                '}';
-    }
 }
 

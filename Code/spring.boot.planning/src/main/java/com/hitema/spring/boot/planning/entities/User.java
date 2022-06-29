@@ -22,10 +22,15 @@ public class User {
 
     @Column(name = "role")
     private String Role;
+    @ManyToMany
+    @JoinTable(name = "session_users",
+                joinColumns = @JoinColumn(name ="Users_idSession" ),
+                inverseJoinColumns = @JoinColumn(name = "Users_idUsers"))
+    private List<Session> sessions;
 
 
 
-   /* @ManyToMany(fetch = FetchType.EAGER)
+/* @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name="user_roles",
             joinColumns={@JoinColumn(name="users_user_id")},
             inverseJoinColumns={@JoinColumn(name="roles_idroles")})
@@ -67,10 +72,12 @@ public class User {
         Poste = poste;
     }
 
-    public User(Integer id, String nom, String poste) {
-        this.id = id;
-        this.nom = nom;
-        Poste = poste;
+    public List<Session> getSessions() {
+        return sessions;
+    }
+
+    public void setSessions(List<Session> sessions) {
+        this.sessions = sessions;
     }
 
     @Override
@@ -79,8 +86,16 @@ public class User {
                 "id=" + id +
                 ", nom='" + nom + '\'' +
                 ", Poste='" + Poste + '\'' +
-                ", Role='" + Role +
+                ", Role='" + Role + '\'' +
+                ", sessions=" + sessions +
                 '}';
     }
+
+    public User(Integer id, String nom, String poste) {
+        this.id = id;
+        this.nom = nom;
+        Poste = poste;
+    }
+
 }
 
