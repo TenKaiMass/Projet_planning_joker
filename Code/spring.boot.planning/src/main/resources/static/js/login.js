@@ -4,16 +4,16 @@ function login_ok() {
   console.log(choix);
   switch (choix) {
     case "admin":
-      url = "index_admin.html";
+      url = "admin";
       break;
     case "membre":
-      url = "index_membre.html";
+      url = "membre";
       break;
     case "responsable":
-      url = "index_responsable.html";
+      url = "responsable";
       break;
     default:
-      console.log("ce n'est pas un role existant");
+      console.log("rôle inexistant");
   }
   const link = document.createElement("a");
   link.href = url;
