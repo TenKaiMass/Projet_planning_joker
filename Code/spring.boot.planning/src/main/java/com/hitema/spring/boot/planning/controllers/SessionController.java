@@ -22,17 +22,17 @@ public class SessionController {
         this.service = service;
     }
 
-    @GetMapping({"","/AllSession"})
+    @GetMapping({"","/session"})
     List<Session> readAll(){
         return service.readAll();
     }
 
-    @GetMapping("/{ids}")
+    @GetMapping("/{id}")
     Session getOne(@PathVariable("id") Integer id){
         log.trace("Session Id :{}",id);
         return service.read(id);
     }
-    @PostMapping("/createSession")
+    @PostMapping("/index_responsable")
     Session create(@RequestBody Session session){
         log.trace("Create new Session : {}",session);
         return service.create(session);

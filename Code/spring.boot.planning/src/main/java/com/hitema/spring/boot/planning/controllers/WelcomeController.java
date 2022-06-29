@@ -17,4 +17,18 @@ public class WelcomeController {
         return "login";
     }
 
+    @GetMapping("/admin")
+    public String Admin(ModelMap model){
+        return "index_admin";
+    }
+    @GetMapping("/id_respo")
+    public String Responsable(ModelMap model){
+        return "index_responsable";
+    }
+    @GetMapping("/session")
+    public String Session(ModelMap model){
+        return "session";
+    }
+
+
 }
