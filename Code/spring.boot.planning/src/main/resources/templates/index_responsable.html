@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr"
+      xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Page d'acceuil</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../static/CSS/w3.css"/>
-    <link rel="stylesheet" href="../static/CSS/custom.css"/>
+    <link th:rel="stylesheet" th:href="@{/CSS/w3.css}"/>
+    <link th:rel="stylesheet" th:href="@{/CSS/custom.css}"/>
     </head>
 </head>
     <body>
@@ -57,7 +58,7 @@
         // const type = new URLSearchParams()
         localStorage.setItem("key_type",favDialog.returnValue)
         const link = document.createElement("a");
-        link.href = './session_responsable.html';
+        link.href = "session_responsable";
         link.target = "_blank";
         document.body.appendChild(link);
         link.click();
