@@ -2,21 +2,44 @@
 <html lang="fr"
       xmlns:th="http://thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Page d'acceuil</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link th:rel="stylesheet" th:href= "@{/CSS/custom.css}">
-    <link th:rel="stylesheet" th:href="@{/CSS/w3.css}">
-    </head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link th:rel="stylesheet" th:href="@{/CSS/w3.css}" />
+    <link th:rel="stylesheet" th:href="@{/CSS/custom.css}" />
+    <title>Admin page</title>
+    <link rel="stylesheet" href="../static/CSS/custom.css">
+    <link rel="stylesheet" href="../static/CSS/w3.css">
 </head>
-<body>
-<h1 class="center">Bienvenue sur le Planning Poker </h1>
-<div class="w3-container center">
-    <a  class="w3-button w3-blue" th:href=@{/admin/add}>ajoutez un membre</a>
-    <a  class="w3-button w3-blue" th:href=@{/admin/remove}>supprimer un membre</a>
-    <a  class="w3-button w3-blue" th:href=@{/admin/update}>Promouvoir un membre</a>
-
-
+<!--<p class="errMsg" id="sysMsg"></p>-->
+<div class="banniere">
+    <h1 class="w3-margin-bottom">Liste des utilisateurs</h1>
+    <a class="w3-button w3-black w3-round-xlarge w3-display-topleft btn" th:href="@{/login}">Logout</a>
+</div>
+<div class="division">
+<div class="w3-container w3-display-topmiddle tab">
+    <table class="w3-table-all">
+        <thead>
+        <tr class="w3-black size">
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Poste</th>
+            <th>Role</th>
+            <th>Suppression/Update</th>
+        </tr>
+        <a  class="w3-button w3-white w3-hover-green w3-border-green w3-round-xxlarge add"  th:href=@{/admin/add}>+</a>
+        </thead>
+        <tbody>
+        <tr class="w3-hover-blue" th:each="user : ${users}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.nom}"></td>
+            <td th:text="${user.Poste}"></td>
+            <td th:text="${user.Role}"></td>
+            <td><a th:href="@{/admin/deleteUser/{id}(id=${user.id})}" class="w3-hover-red w3-border w3-border-black w3-hover-border-red w3-btn w3-round-xxlarge">Supprimer</a>
+                <a th:href="@{/admin/updateMyUser/{id}(id=${user.id})}" class="w3-hover-green w3-border w3-border-black w3-hover-border-green w3-btn w3-round-xxlarge">Promouvoir</a></td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
 </div>
 </body>
 </html>

@@ -21,7 +21,6 @@ public class Session {
     @Column(name="date_creation")
     private LocalDateTime creationDate;
     @Column(name="resultat_vote")
-
     private Integer ResultatVote;
     @ManyToMany(mappedBy = "sessions")
     private List<User> users;

@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.security.RolesAllowed;
+
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
@@ -29,12 +31,12 @@ public class AdminController {
         return "add_user";
     }
 
-    @GetMapping("/remove")
+/*    @GetMapping("/remove")
     public String RemoveUser(ModelMap model) {
         log.info("readAll user called ...");
         model.addAttribute("users", service.readAll());
         return "remove_user";
-    }
+    }*/
     @PostMapping("/add")
     public String retrieveUser(@ModelAttribute("user") User user) {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
@@ -42,7 +44,7 @@ public class AdminController {
         user.setPassword(mdp);
         log.info(user.toString());
         service.create(user);
-        return "index_admin";
+        return "redirect:/admin";
     }
 
     @GetMapping("/deleteUser/{id}")
@@ -51,21 +53,21 @@ public class AdminController {
         log.info(String.valueOf(id));
         service.delete(id);
         log.info("user deleted");
-        return "redirect:/admin/remove";
+        return "redirect:/admin";
     }
 
-    @GetMapping("/update")
+/*    @GetMapping("/update")
     public String updateUser(ModelMap model) {
         log.info("readAll user called ...");
         model.addAttribute("users", service.readAllMember());
         return "update_role";
-    }
+    }*/
 
     @GetMapping("/updateMyUser/{id}")
     public String updateMyUser(@PathVariable("id") Long id, Model model){
         User u = service.read(id);
         u.setRole("responsable");
         service.update(u);
-        return "redirect:/admin/update";
+        return "redirect:/admin";
     }
 }

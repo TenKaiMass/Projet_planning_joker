@@ -47,23 +47,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-//        FormLoginConfigurer login = http.authorizeRequests().antMatchers("/admin").hasRole("admin").anyRequest().authenticated()
-//                .and().formLogin().defaultSuccessUrl("/admin");
-//
-//        FormLoginConfigurer login2 = http.authorizeRequests().antMatchers("/sessions").hasRole("responsable").anyRequest().authenticated()
-//                .and().formLogin().defaultSuccessUrl("/sessions");
-//
-//        FormLoginConfigurer login3 = http.authorizeRequests().antMatchers("/membre").hasRole("membre").anyRequest().authenticated()
-//                .and().formLogin().defaultSuccessUrl("/membre");
 
 
-//        http.authorizeRequests()
-//                .antMatchers("/admin").hasRole("admin")
+//        http.authorizeRequests().antMatchers("/admin").hasRole("admin")
 //                .antMatchers("/responsable").hasRole("responsable")
 //                .antMatchers("/membre").hasRole("membre")
 //                .anyRequest().authenticated().and()
 //                .formLogin().and().logout().logoutSuccessUrl("index.html");
-        http.authorizeRequests()
+        http.csrf().disable()
+                .authorizeRequests()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().permitAll().successHandler(new AuthenticationSuccessHandler() {
