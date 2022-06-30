@@ -10,12 +10,13 @@
     <title>Ajout membres</title>
   </head>
     <p class="errMsg" id="sysMsg"></p>
-
-    <h1 class="center">Vous etes dans une session</h1>
-    <button id="btn_vote" class="w3-button w3-blue">Démarrer le vote</button>
-    <button id="btn_ajout" class="w3-button w3-blue">ajouter membre</button>
-    <button id="btn_suppression" class="w3-button w3-blue">supprimer membre</button>
-
+    <div class="w3-container center">
+        <h1 class="center">Session Responsable </h1>
+        <button id="btn_create" class="w3-button w3-blue">créer une session</button>
+        <button id="btn_vote" class="w3-button w3-blue">Démarrer le vote</button>
+        <button id="btn_ajout" class="w3-button w3-blue">ajouter membre</button>
+        <button id="btn_suppression" class="w3-button w3-blue">supprimer membre</button>
+    </div>
     <dialog id="ajout_membre" class="w3-round-xlarge w3-border w3-border-white">
         <div class="w3-container center">
             <table class="w3-table-all">
@@ -30,7 +31,6 @@
               </thead>
               <tbody>
                   <tr class="w3-hover-blue" th:each="user : ${users}">
-                  <!-- th:each="mem : countries" > -->
                       <td th:text="${user.id}"></td>
                       <td th:text="${user.nom}"></td>
                       <td th:text="${user.Poste}"></td>
@@ -81,6 +81,15 @@
     </dialog>
   </body>
   <script>
+        //creation session
+        const btncreate = document.getElementById('btn_create');
+        btncreate.addEventListener('click', () => {
+            const link = document.createElement("a");
+            link.href = "sessions/add";
+            link.target = "_blank";
+            document.body.appendChild(link);
+            link.click();
+        });
         //partie ajout membre
         const btnOpenAjout = document.getElementById('btn_ajout');
         const favDialogAjout = document.querySelector('#ajout_membre');

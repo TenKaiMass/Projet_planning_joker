@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr"
+      xmlns:th="http://thymeleaf.org">
+  <head>
+    <meta charset="utf-8" />
+    <title>Créer une session</title>
+    <link th:rel="stylesheet" th:href="@{/CSS/style_2.css}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="container">
+      <form action="#" th:action="@{/sessions/add}" th:objects="${session}" method="post">
+        <div class="form-row">
+          <div class="input-data">
+            <input type="text" required th:field="*{session.nom}" />
+            <div class="underline"></div>
+            <label >Nom</label>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="input-data">
+            <input type=text list=roles required th:field="*{session.unites}">
+            <datalist id=roles >
+              <option> jours
+              <option> points
+            </datalist>
+            <label>Unites</label>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="input-data textarea">
+            <br />
+            <div class="underline"></div>
+            <br />
+            <div class="form-row submit-btn">
+              <div class="input-data">
+                <div class="inner"></div>
+                <input type="submit" value="enregistrer" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
