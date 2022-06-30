@@ -1,21 +1,44 @@
 <!DOCTYPE html>
 <html lang="fr"
-      xmlns:th="http://thymeleaf.org">>
+      xmlns:th="http://thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link th:rel="stylesheet" th:href="@{/CSS/w3.css}" />
     <link th:rel="stylesheet" th:href="@{/CSS/custom.css}" />
 
-    <title>Ajout membres</title>
+    <title>Responsable</title>
   </head>
+  <body>
     <p class="errMsg" id="sysMsg"></p>
+
+    <button id="btn_create" class="w3-margin-left w3-margin-top w3-button w3-blue">créer une session</button>
     <div class="w3-container center">
-        <h1 class="center">Session Responsable </h1>
-        <button id="btn_create" class="w3-button w3-blue">créer une session</button>
-        <button id="btn_vote" class="w3-button w3-blue">Démarrer le vote</button>
-        <button id="btn_ajout" class="w3-button w3-blue">ajouter membre</button>
-        <button id="btn_suppression" class="w3-button w3-blue">supprimer membre</button>
+        <h1 class="center">Liste des Sessions</h1>
+        <table class="w3-table-all">
+            <thead>
+            <tr class="w3-green">
+                <th>ID</th>
+                <th>Nom</th>
+                <th>unite</th>
+                <th>ResultatVote</th>
+                <th>ajoutMembre</th>
+                <th>SuppressionMembre</th>
+                <th>Session</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="w3-hover-blue" th:each="se : ${sess}">
+                <td th:text="${se.id}"></td>
+                <td th:text="${se.nom}"></td>
+                <td th:text="${se.unites}"></td>
+                <td th:text="${se.ResultatVote}"></td>
+                <td><a id="btn_ajout"  class="w3-hover-red w3-border w3-border-black w3-hover-border-red w3-btn w3-round-xxlarge">Ajouter membre</a></td>
+                <td><a id="btn_suppression" class="w3-hover-red w3-border w3-border-black w3-hover-border-red w3-btn w3-round-xxlarge">Supprimer membre</a></td>
+                <td><a id="btn_vote" class="w3-hover-red w3-border w3-border-black w3-hover-border-red w3-btn w3-round-xxlarge">Démarrer la session</a></td>
+            </tr>
+            </tbody>
+        </table>
     </div>
     <dialog id="ajout_membre" class="w3-round-xlarge w3-border w3-border-white">
         <div class="w3-container center">

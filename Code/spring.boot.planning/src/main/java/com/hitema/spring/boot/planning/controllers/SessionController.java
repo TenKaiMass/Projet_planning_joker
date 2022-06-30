@@ -5,7 +5,7 @@ import com.hitema.spring.boot.planning.entities.Session;
 import com.hitema.spring.boot.planning.entities.User;
 import com.hitema.spring.boot.planning.services.SessionService;
 import com.hitema.spring.boot.planning.services.UserService;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Controller
-@RequestMapping("/sessions")
+@RequestMapping("/session_responsable")
 public class SessionController {
     private static final Logger log = LoggerFactory.getLogger(SessionController.class);
 
@@ -41,15 +41,24 @@ public class SessionController {
         return service.read(id);
     }
 
-    @GetMapping("/session_responsable")
+    @GetMapping("/session")
     public String SessionRespo(ModelMap model){
-        model.addAttribute("users", userService.readAllMember());
+        log.info("sessionResponsable");
+        List<User> users = userService.readAllMember();
+        log.info("All users ... : {}",users);
+        model.addAttribute("users", users);
+        log.info("All users loaded");
+        List<Session> sessions = service.readAll();
+        log.info("All Sessions ... : {}",sessions);
+        model.addAttribute("sess",sessions);
+        log.info("All sessions loaded");
         return "session_responsable";
     }
 
 
     @GetMapping("/add")
     public String addSession(ModelMap model) {
+        log.info("addsesssion");
         Session session = new Session();
         model.addAttribute("session", session);
         return "add_session";
@@ -57,8 +66,6 @@ public class SessionController {
 
     @PostMapping("/add")
     public String retrieveSession(@ModelAttribute("session") Session session) {
-        /*session.setNom(nom);
-        session.setUnites(unit);*/
         session.setCreationDate(LocalDateTime.now());
         log.info(session.toString());
         service.create(session);

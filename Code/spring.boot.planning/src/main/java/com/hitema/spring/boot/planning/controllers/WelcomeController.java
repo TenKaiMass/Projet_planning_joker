@@ -34,23 +34,9 @@ public class WelcomeController {
     }
 
 
-//    private UserService service;
-//
-//    public  WelcomeController(UserService service){
-//        this.service = service;
-//    }
-//    @GetMapping
-//    public String Root(ModelMap model){
-//        User u = service.read(u.getId())
-//        return "index";}
     @GetMapping("/admin")
     public String Admin(ModelMap model){
         return "index_admin";
-    }
-
-    @GetMapping("/session")
-    public String Session(ModelMap model){
-        return "session_point";
     }
 
     @GetMapping("/membre")
@@ -60,21 +46,9 @@ public class WelcomeController {
 
     @GetMapping("/responsable")
     public String Responsable(ModelMap model){
-        return "index_responsable";
-    }
-
-
-    @GetMapping("/session_responsable")
-    public String SessionRespo(ModelMap model){
-        model.addAttribute("users", service.readAll());
         return "session_responsable";
     }
 
-    @GetMapping("/list_membre")
-    public String AjoutMembreSession(ModelMap model){
-        model.addAttribute("users", service.readAllMember());
-        return "session_responsable";
-    }
 
 
 
