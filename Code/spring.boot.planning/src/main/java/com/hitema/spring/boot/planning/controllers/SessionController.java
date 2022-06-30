@@ -4,6 +4,7 @@ package com.hitema.spring.boot.planning.controllers;
 import com.hitema.spring.boot.planning.entities.Session;
 import com.hitema.spring.boot.planning.entities.User;
 import com.hitema.spring.boot.planning.services.SessionService;
+import com.hitema.spring.boot.planning.services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -20,9 +21,15 @@ public class SessionController {
 
     private SessionService service;
 
-    public  SessionController(SessionService service){
+    private UserService userService;
+
+
+
+    public  SessionController(SessionService service, UserService userService){
         this.service = service;
+        this.userService = userService;
     }
+
 
 
 
@@ -30,6 +37,12 @@ public class SessionController {
     Session getOne(@PathVariable("id") Long id){
         log.trace("Session Id :{}",id);
         return service.read(id);
+    }
+
+    @GetMapping("/session_responsable")
+    public String SessionRespo(ModelMap model){
+        model.addAttribute("users", userService.readAllMember());
+        return "session_responsable";
     }
 
 /*    @PostMapping("/sess")
