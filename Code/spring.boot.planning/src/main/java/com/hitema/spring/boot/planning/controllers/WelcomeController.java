@@ -44,10 +44,7 @@ public class WelcomeController {
         return "index_responsable";
     }
 
-    @GetMapping("/session_responsable")
-    public String SessionRespo(ModelMap model){
-        return "session_responsable";
-    }
+
 
 
 

@@ -77,7 +77,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         String username = userDetails.getUsername();
                         String role = userDetails.getUserRole();
                         String path1 = request.getContextPath()+"/admin";
-                        String path2 = request.getContextPath()+"/sessions";
+                        String path2 = request.getContextPath()+"/responsable";
                         String path3 = request.getContextPath()+"/membre";
 
                         if (role.equals("admin")) {
