@@ -18,7 +18,7 @@ USE `pokerBD` ;
 -- -----------------------------------------------------
 -- Table `pokerbd`.`role`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `pokerbd`.`role` (
+CREATE TABLE IF NOT EXISTS `pokerbd`.`roles` (
   `role_id` INT NOT NULL AUTO_INCREMENT,
   `label` VARCHAR(255) NULL DEFAULT NULL,
   `role` VARCHAR(255) NULL DEFAULT NULL,
