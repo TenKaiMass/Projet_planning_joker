@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public User read(Integer id) {return repository.findById(id).orElse(null);
+    public User read(Long id) {return repository.findById(id).orElse(null);
     }
 
     @Override
@@ -40,7 +40,7 @@ public class UserServiceImpl implements UserService{
         return repository.findAllMemberByRole();
     }
     @Override
-    public Boolean delete(Integer id) {
+    public Boolean delete(Long id) {
         repository.deleteById(id);
         return (read(id) == null);
     }

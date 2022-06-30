@@ -8,7 +8,7 @@ public interface SessionService {
     List<Session> readAll();
     Session create(Session session);
     Session update(Session session);
-    Session read(Integer id);
-    Boolean delete(Integer id);
+    Session read(Long id);
+    Boolean delete(Long id);
 
 }

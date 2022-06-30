@@ -12,7 +12,7 @@ public class Session {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "session_id")
-    private Integer id;
+    private Long id;
     @Column(name = "nom")
     private String nom ;
     @Column(name = "unites")
@@ -20,10 +20,12 @@ public class Session {
 
     @Column(name="date_creation")
     private LocalDateTime creationDate;
+    @Column(name="resultat_vote")
 
     private Integer ResultatVote;
     @ManyToMany(mappedBy = "sessions")
     private List<User> users;
+
 
     @Override
     public String toString() {
@@ -37,12 +39,11 @@ public class Session {
                 '}';
     }
 
-    public Integer getId() {
-
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

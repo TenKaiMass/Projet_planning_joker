@@ -8,10 +8,8 @@ public interface UserService {
     List<User> readAll();
     User create(User user);
     User update(User user);
-    User read(Integer id);
-
+    User read(Long id);
     List<User> readAllMember();
-
-    Boolean delete(Integer id);
+    Boolean delete(Long id);
 
 }

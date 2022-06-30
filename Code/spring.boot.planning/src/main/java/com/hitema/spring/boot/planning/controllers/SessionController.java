@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 
 @Controller
-    @RequestMapping("/sessions")
+@RequestMapping("/sessions")
 public class SessionController {
     private static final Logger log = LoggerFactory.getLogger(SessionController.class);
 
@@ -25,14 +25,23 @@ public class SessionController {
     }
 
 
+
     @GetMapping("/{id}")
-    Session getOne(@PathVariable("id") Integer id){
+    Session getOne(@PathVariable("id") Long id){
         log.trace("Session Id :{}",id);
         return service.read(id);
     }
 
 /*    @PostMapping("/sess")
     public String SessionStart(@ModelAttribute("session") Session session) {
+
+
+    @GetMapping("/session_responsable")
+    public String SessionRespo(ModelMap model){
+        return "session_responsable";
+    }
+    @PostMapping("/session_responsable")
+    public String SessionStart(Session session) {
 
         log.info(session.toString());
         service.create(session);
@@ -44,8 +53,5 @@ public class SessionController {
 
 
 
-
-
-
-
+    
 }
