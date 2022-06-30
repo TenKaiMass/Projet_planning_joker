@@ -1,7 +1,6 @@
 package com.hitema.spring.boot.planning.controllers;
 
 
-
 import com.hitema.spring.boot.planning.services.SessionService;
 import com.hitema.spring.boot.planning.services.UserService;
 import org.slf4j.Logger;
@@ -12,8 +11,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.security.RolesAllowed;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+
+import java.time.LocalDateTime;
 
 @Controller
 public class WelcomeController {
@@ -21,31 +21,33 @@ public class WelcomeController {
 
     private static final Logger log = LoggerFactory.getLogger(WelcomeController.class);
     private UserService service;
-    private  SessionService sessionService;
+    private SessionService sessionService;
 
-    public  WelcomeController(UserService service){
+    public WelcomeController(UserService service, SessionService sessionService) {
         this.service = service;
+        this.sessionService = sessionService;
     }
 
 
     @GetMapping
-    public String Login(ModelMap model){
+    public String Login(ModelMap model) {
         return "login";
     }
 
-
+  
     @GetMapping("/admin")
-    public String Admin(ModelMap model){
+    public String Admin(ModelMap model) {
+        model.addAttribute("users", service.readAll());
         return "index_admin";
     }
 
     @GetMapping("/membre")
-    public String Membre(ModelMap model){
+    public String Membre(ModelMap model) {
         return "index_membre";
     }
 
     @GetMapping("/responsable")
-    public String Responsable(ModelMap model){
+    public String Responsable(ModelMap model) {
         model.addAttribute("users", service.readAll());
         return "session_responsable";
     }
