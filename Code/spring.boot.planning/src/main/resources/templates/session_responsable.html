@@ -15,7 +15,7 @@
     <button id="btn_vote" class="w3-button w3-blue">Démarrer le vote</button>
     <button id="btn_ajout" class="w3-button w3-blue">ajouter membre</button>
     <button id="btn_suppression" class="w3-button w3-blue">supprimer membre</button>
-    
+
     <dialog id="ajout_membre" class="w3-round-xlarge w3-border w3-border-white">
         <div class="w3-container center">
             <table class="w3-table-all">
@@ -47,7 +47,7 @@
             </menu>
         </div>
     </dialog>
-    
+
      <dialog id="supp_membre" class="w3-round-xlarge w3-border w3-border-white">
         <div class="w3-container center">
             <table class="w3-table-all">
@@ -69,7 +69,7 @@
                       <td th:text="cty.Role"></td>
                       <td><input id="supp" class="w3-hover-red w3-border w3-border-black w3-hover-border-red w3-btn w3-round-xxlarge" type="button"
                           value="Supprimer"></td>
-                      <!-- <td th:input="class="w3-hover-green w3-border w3-border-black w3-hover-border-green w3-btn w3-round-xxlarge" type="button" 
+                      <!-- <td th:input="class="w3-hover-green w3-border w3-border-black w3-hover-border-green w3-btn w3-round-xxlarge" type="button"
                       value="Suupprimer"></td>  -->
                   </tr>
               </tbody>
@@ -77,7 +77,8 @@
             <menu>
                 <button id="close_dialog_supp" class="w3-hover-red w3-round-large w3-border w3-hover-border-red">Annuler</button>
             </menu>
-    </dialog> 
+        </div>
+    </dialog>
   </body>
   <script>
         //partie ajout membre
@@ -112,7 +113,7 @@
             favDialogSupp.close()
         });
 
-        const btnVote =document.getElementById('btn_vote') 
+        const btnVote =document.getElementById('btn_vote')
 
         btnVote.addEventListener('click',()=> {
             typeVote()
@@ -122,9 +123,9 @@
           var url =''
           console.log(pass)
           if (pass == 'Jours'){
-            url = "./session_point.html" 
+            url = "./session_point.html"
           }else if(pass == 'Points'){
-            url ="./session_point.html" 
+            url ="./session_point.html"
           }
           else{
             alert("erreur pas de type reglementaire")

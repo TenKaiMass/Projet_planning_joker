@@ -33,11 +33,11 @@ public class SessionServiceImpl implements SessionService{
     }
 
     @Override
-    public Session read(Integer id) {return repository.findById(id).orElse(null);
+    public Session read(Long id) {return repository.findById(id).orElse(null);
     }
 
     @Override
-    public Boolean delete(Integer id) {
+    public Boolean delete(Long id) {
         repository.deleteById(id);
         return (read(id) == null);
     }
