@@ -28,13 +28,6 @@ public class WelcomeController {
         this.sessionService = sessionService;
     }
 
-
-    @GetMapping
-    public String Login(ModelMap model) {
-        return "login";
-    }
-
-  
     @GetMapping("/admin")
     public String Admin(ModelMap model) {
         model.addAttribute("users", service.readAll());
@@ -46,15 +39,8 @@ public class WelcomeController {
         return "index_membre";
     }
 
-    @GetMapping("/responsable")
+    @GetMapping("/session_")
     public String Responsable(ModelMap model) {
-        model.addAttribute("users", service.readAll());
-        return "session_responsable";
-    }
-
-    @GetMapping("/list_membre")
-    public String AjoutMembreSession(ModelMap model) {
-        model.addAttribute("users", service.readAllMember());
         return "session_responsable";
     }
 
