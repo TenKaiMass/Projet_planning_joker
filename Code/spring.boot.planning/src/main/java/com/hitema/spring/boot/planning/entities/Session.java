@@ -26,8 +26,17 @@ public class Session {
     @ManyToMany(mappedBy = "sessions")
     private List<User> users;
 
-    public Session() {
 
+    @Override
+    public String toString() {
+        return "Session{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", unites='" + unites + '\'' +
+                ", creationDate=" + creationDate +
+                ", ResultatVote=" + ResultatVote +
+
+                '}';
     }
 
     public Long getId() {
@@ -77,25 +86,5 @@ public class Session {
     public void setUsers(List<User> users) {
         this.users = users;
     }
-
-    public Session(Integer id, String nom, String unites, LocalDateTime creationDate, Integer resultatVote) {
-        this.id = id;
-        this.nom = nom;
-        this.unites = unites;
-        this.creationDate = creationDate;
-        ResultatVote = resultatVote;
-    }
-
-    @Override
-    public String toString() {
-        return "Session{" +
-                "id=" + id +
-                ", nom='" + nom + '\'' +
-                ", unites='" + unites + '\'' +
-                ", creationDate=" + creationDate +
-                ", ResultatVote=" + ResultatVote +
-                '}';
-    }
-
 }
 

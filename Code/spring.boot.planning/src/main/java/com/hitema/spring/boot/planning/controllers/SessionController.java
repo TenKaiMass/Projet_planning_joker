@@ -23,16 +23,33 @@ public class SessionController {
     public  SessionController(SessionService service){
         this.service = service;
     }
+
+
+
+    @GetMapping("/{id}")
+    Session getOne(@PathVariable("id") Long id){
+        log.trace("Session Id :{}",id);
+        return service.read(id);
+    }
+
+/*    @PostMapping("/sess")
+    public String SessionStart(@ModelAttribute("session") Session session) {
+
+
     @GetMapping("/session_responsable")
     public String SessionRespo(ModelMap model){
         return "session_responsable";
     }
     @PostMapping("/session_responsable")
     public String SessionStart(Session session) {
+
         log.info(session.toString());
         service.create(session);
         return "session_responsable";
-    }
+    }*/
+
+
+
 
 
 
