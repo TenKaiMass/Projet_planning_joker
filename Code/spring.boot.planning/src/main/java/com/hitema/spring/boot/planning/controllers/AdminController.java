@@ -4,6 +4,7 @@ import com.hitema.spring.boot.planning.entities.User;
 import com.hitema.spring.boot.planning.services.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -36,6 +37,9 @@ public class AdminController {
     }
     @PostMapping("/add")
     public String retrieveUser(@ModelAttribute("user") User user) {
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        String mdp = encoder.encode(user.getNom());
+        user.setPassword(mdp);
         log.info(user.toString());
         service.create(user);
         return "index_admin";
