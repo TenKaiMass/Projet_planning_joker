@@ -24,7 +24,7 @@ public class User {
     private String Role;
     @ManyToMany
     @JoinTable(name = "session_users",
-                joinColumns = @JoinColumn(name ="Users_idSession" ),
+                joinColumns = @JoinColumn(name ="Session_idSession" ),
                 inverseJoinColumns = @JoinColumn(name = "Users_idUsers"))
     private List<Session> sessions;
 

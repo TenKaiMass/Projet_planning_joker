@@ -20,21 +20,13 @@ public class Session {
 
     @Column(name="date_creation")
     private LocalDateTime creationDate;
-
+    @Column(name="resultat_vote")
     private Integer ResultatVote;
     @ManyToMany(mappedBy = "sessions")
     private List<User> users;
 
-    @Override
-    public String toString() {
-        return "Session{" +
-                "id=" + id +
-                ", nom='" + nom + '\'' +
-                ", unites='" + unites + '\'' +
-                ", creationDate=" + creationDate +
-                ", ResultatVote=" + ResultatVote +
-                ", users=" + users +
-                '}';
+    public Session() {
+
     }
 
     public Integer getId() {
@@ -84,5 +76,25 @@ public class Session {
     public void setUsers(List<User> users) {
         this.users = users;
     }
+
+    public Session(Integer id, String nom, String unites, LocalDateTime creationDate, Integer resultatVote) {
+        this.id = id;
+        this.nom = nom;
+        this.unites = unites;
+        this.creationDate = creationDate;
+        ResultatVote = resultatVote;
+    }
+
+    @Override
+    public String toString() {
+        return "Session{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", unites='" + unites + '\'' +
+                ", creationDate=" + creationDate +
+                ", ResultatVote=" + ResultatVote +
+                '}';
+    }
+
 }
 

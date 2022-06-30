@@ -24,9 +24,15 @@
         </div>
         <div class="form-row">
           <div class="input-data">
-            <input type="text" required th:field="*{user.Role}"/>
-            <div class="underline"></div>
+            <input type=text list=roles required th:field="*{user.Role}">
+            <datalist id=roles >
+              <option> membre
+              <option> responsable
+            </datalist>
             <label>Role</label>
+            <!--<input type="text" required th:field="*{user.Role}"/>
+            <div class="underline"></div>
+            <label>Role</label>-->
           </div>
         </div>
         <div class="form-row">
