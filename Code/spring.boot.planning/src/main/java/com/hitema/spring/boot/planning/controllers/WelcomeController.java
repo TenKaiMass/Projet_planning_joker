@@ -46,11 +46,15 @@ public class WelcomeController {
 
     @GetMapping("/responsable")
     public String Responsable(ModelMap model){
+        model.addAttribute("users", service.readAll());
         return "session_responsable";
     }
 
-
-
+    @GetMapping("/list_membre")
+    public String AjoutMembreSession(ModelMap model) {
+        model.addAttribute("users", service.readAllMember());
+        return "session_responsable";
+    }
 
 
 }

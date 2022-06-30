@@ -13,9 +13,6 @@ body{
   justify-content: center;
   background: #5372F0;
 }
-h1{
-  color: white;
-}
 ::selection{
   color: #fff;
   background: #5372F0;
