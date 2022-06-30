@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="container">
-      <form action="#" th:action="@{/sessions/add}" th:objects="${session}" method="post">
+      <form action="#" th:action="@{/session_responsable/session/add}" th:objects="${session}" method="post">
         <div class="form-row">
           <div class="input-data">
             <input type="text" required th:field="*{session.nom}" />
