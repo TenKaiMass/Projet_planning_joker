@@ -56,7 +56,7 @@ public class SessionController {
     }
 
 
-    @GetMapping("/add")
+    @GetMapping("/session/add")
     public String addSession(ModelMap model) {
         log.info("addsesssion");
         Session session = new Session();
@@ -64,20 +64,20 @@ public class SessionController {
         return "add_session";
     }
 
-    @PostMapping("/add")
+    @PostMapping("/session/add")
     public String retrieveSession(@ModelAttribute("session") Session session) {
         session.setCreationDate(LocalDateTime.now());
         log.info(session.toString());
         service.create(session);
-        return "index_admin";
+        return "redirect:/session_responsable/session";
     }
 
-    @PostMapping("/addUserToSession")
+    @PostMapping("/session/addUserToSession")
     public String retrieveUser(@ModelAttribute("user") User user) {
         //user.setPassword(mdp);
         log.info(user.toString());
         userService.create(user);
-        return "index_admin";
+        return "session_responsable";
     }
 
 
