@@ -42,7 +42,7 @@ public class AdminController {
     }
 
     @GetMapping("/deleteUser/{id}")
-    public String deleteUser(@PathVariable("id") Integer id, Model model) {
+    public String deleteUser(@PathVariable("id") Long id, Model model) {
         log.info("deleting user...");
         log.info(String.valueOf(id));
         service.delete(id);
@@ -58,7 +58,7 @@ public class AdminController {
     }
 
     @GetMapping("/updateMyUser/{id}")
-    public String updateMyUser(@PathVariable("id") Integer id, Model model){
+    public String updateMyUser(@PathVariable("id") Long id, Model model){
         User u = service.read(id);
         u.setRole("responsable");
         service.update(u);
