@@ -3,6 +3,7 @@ package com.hitema.spring.boot.planning.entities;
 
 
 import javax.persistence.*;
+
 import java.util.List;
 
 
@@ -12,7 +13,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
-    private Integer id;
+    private Long id;
 
     @Column(name = "nom")
     private String nom;
@@ -28,6 +29,10 @@ public class User {
                 inverseJoinColumns = @JoinColumn(name = "Users_idUsers"))
     private List<Session> sessions;
 
+    @Column(name = "password")
+    private String password;
+
+
 
 
 /* @ManyToMany(fetch = FetchType.EAGER)
@@ -39,13 +44,19 @@ public class User {
     public User() {
 
     }
+    public String getPassword() {
+        return password;
+    }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer idUsers) {
+    public void setId(Long idUsers) {
         this.id = idUsers;
     }
 
@@ -86,12 +97,13 @@ public class User {
                 "id=" + id +
                 ", nom='" + nom + '\'' +
                 ", Poste='" + Poste + '\'' +
-                ", Role='" + Role + '\'' +
-                ", sessions=" + sessions +
+                ", Role='" + Role + '\''+
+                ", encrypteMdp='" + password + '\''+
+                ", session='" + sessions +
                 '}';
     }
 
-    public User(Integer id, String nom, String poste) {
+    public User(Long id, String nom, String poste) {
         this.id = id;
         this.nom = nom;
         Poste = poste;

@@ -56,15 +56,12 @@
         // "Confirm" button of form triggers "close" on dialog because of [method="dialog"]
         confirmBtn.addEventListener('click', () => {
         // const type = new URLSearchParams()
-        localStorage.setItem("key_type",favDialog.returnValue)
+        //localStorage.setItem("key_type",favDialog.returnValue);
         const link = document.createElement("a");
-        link.href = "session_responsable";
+        link.href = "sessions/session_responsable";
         link.target = "_blank";
         document.body.appendChild(link);
         link.click();
     });
-
-        
-  
     </script>
 </html> 

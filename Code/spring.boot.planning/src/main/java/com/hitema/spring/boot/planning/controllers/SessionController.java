@@ -24,16 +24,10 @@ public class SessionController {
         this.service = service;
     }
 
-    @GetMapping({"","/session"})
-    List<Session> readAll(){
-        return service.readAll();
-    }
-
-    @GetMapping("/{id}")
-    Session getOne(@PathVariable("id") Integer id){
-        log.trace("Session Id :{}",id);
-        return service.read(id);
-    }
+//    @GetMapping({"","/session"})
+//    List<Session> readAll(){
+//        return service.readAll();
+//    }
 
     @PostMapping("/sess")
     public String SessionStart(@ModelAttribute("session") Session session) {

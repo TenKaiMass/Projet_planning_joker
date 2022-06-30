@@ -22,9 +22,7 @@ class RoleServiceImplTest {
     private static final Logger log = LoggerFactory.getLogger(RoleServiceImplTest.class);
     @Autowired
     private RoleService service;
-
     private Role role;
-
 
     @BeforeEach
     void setUp() {
