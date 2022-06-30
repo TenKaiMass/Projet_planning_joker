@@ -33,11 +33,12 @@ public class Session {
                 ", unites='" + unites + '\'' +
                 ", creationDate=" + creationDate +
                 ", ResultatVote=" + ResultatVote +
-                ", users=" + users +
+
                 '}';
     }
 
     public Integer getId() {
+
         return id;
     }
 

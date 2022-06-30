@@ -29,12 +29,12 @@
                 </tr>
               </thead>
               <tbody>
-                  <tr class="w3-hover-blue">
+                  <tr class="w3-hover-blue" th:each="user : ${users}">
                   <!-- th:each="mem : countries" > -->
-                      <td th:text="cty.id"></td>
-                      <td th:text="cty.Nom"></td>
-                      <td th:text="cty.Poste"></td>
-                      <td th:text="cty.Role"></td>
+                      <td th:text="${user.id}"></td>
+                      <td th:text="${user.nom}"></td>
+                      <td th:text="${user.Poste}"></td>
+                      <td th:text="${user.Role}"></td>
                       <td><input id="ajout" class="w3-hover-green w3-border w3-border-black w3-hover-border-green w3-btn w3-round-xxlarge" type="button"
                           value="Ajouter"></td>
                       <!-- <td th:input="class="w3-hover-green w3-border w3-border-black w3-hover-border-green w3-btn w3-round-xxlarge" type="button"
@@ -61,15 +61,15 @@
                 </tr>
               </thead>
               <tbody>
-                  <tr class="w3-hover-blue">
+                  <tr class="w3-hover-blue" th:each="user : ${users}">
                   <!-- th:each="mem : countries" > -->
-                      <td th:text="cty.id"></td>
-                      <td th:text="cty.Nom"></td>
-                      <td th:text="cty.Poste"></td>
-                      <td th:text="cty.Role"></td>
+                      <td th:text="${user.id}"></td>
+                      <td th:text="${user.nom}"></td>
+                      <td th:text="${user.Poste}"></td>
+                      <td th:text="${user.Role}"></td>
                       <td><input id="supp" class="w3-hover-red w3-border w3-border-black w3-hover-border-red w3-btn w3-round-xxlarge" type="button"
                           value="Supprimer"></td>
-                      <!-- <td th:input="class="w3-hover-green w3-border w3-border-black w3-hover-border-green w3-btn w3-round-xxlarge" type="button" 
+                      <!-- <td th:input="class="w3-hover-green w3-border w3-border-black w3-hover-border-green w3-btn w3-round-xxlarge" type="button"
                       value="Suupprimer"></td>  -->
                   </tr>
               </tbody>
@@ -122,7 +122,7 @@
           var url =''
           console.log(pass)
           if (pass == 'Jours'){
-            url = "./session_point.html" 
+            url = "./session_jour.html"
           }else if(pass == 'Points'){
             url ="./session_point.html" 
           }
