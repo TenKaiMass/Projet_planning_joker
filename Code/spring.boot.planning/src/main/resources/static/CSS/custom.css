@@ -1,6 +1,32 @@
+
 .center{
     text-align: center;
 }
 .errMsg{
     color: red;
+}
+.btn{
+    margin-top: 40px;
+}
+.tab{
+    margin-top: 95px;
+}
+.add{
+    margin-top: 67px;
+    margin-right: 25%;
+}
+tbody{
+    width: 40%;
+}
+.banniere{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+}
+body{
+    background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
+    min-height: 100vh;
 }
